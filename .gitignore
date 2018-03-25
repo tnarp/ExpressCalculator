@@ -1,4 +1,4 @@
-/.idea/
-/.gradle/
-/.out/
-/ExpressCalculator.iml
+.idea/
+.gradle/
+out/
+ExpressCalculator.iml
