@@ -21,7 +21,7 @@ public class FixTransfer {
                     postFixExpressBuffer.append(fetchOperatorInParenthesis(operators));
                 }
                 if (operatorUtil.isOperator(str)) {
-                    postFixExpressBuffer.append(fetchHighPriorityOperator(operators, str));
+                    postFixExpressBuffer.append(fetchHighOrEqualPriorityOperator(operators, str));
                     operators.push(str);
                 }
             }
@@ -34,16 +34,16 @@ public class FixTransfer {
         return !(operatorUtil.isOperator(str) || operatorUtil.isParenthesis(str));
     }
 
-    private String fetchHighPriorityOperator(Stack<String> operators, String str) {
-        StringBuilder allHighPriorityOperator = new StringBuilder();
+    private String fetchHighOrEqualPriorityOperator(Stack<String> operators, String str) {
+        StringBuilder allHighOrEqualPriorityOperator = new StringBuilder();
         while (!operators.isEmpty()) {
-            if (operatorUtil.isHighPriority(operators.peek(), str)) {
-                allHighPriorityOperator.append(operators.pop());
+            if (operatorUtil.isHighOrEqualPriority(operators.peek(), str)) {
+                allHighOrEqualPriorityOperator.append(operators.pop());
             } else {
                 break;
             }
         }
-        return allHighPriorityOperator.toString();
+        return allHighOrEqualPriorityOperator.toString();
     }
 
     private String fetchOperatorInParenthesis(Stack<String> operators) {

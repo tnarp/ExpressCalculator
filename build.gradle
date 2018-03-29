@@ -11,7 +11,7 @@ jar {
         attributes (
                 "Implementation-Title": project.name,
                 "Implementation-Version": version,
-                "Main-Class": "com.tnarp.express.calculator.ExpressCalculator"
+                "Main-Class": "com.tnarp.express.calculator.ExpressCalculatorApp"
         )
     }
 }

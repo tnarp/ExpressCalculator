@@ -4,8 +4,8 @@ import java.util.Stack;
 
 public class FixCalculator {
 
+    private static final String ZERO = "0";
     private OperatorUtil operatorUtil = new OperatorUtil();
-    public static final String ZERO = "0";
 
     public double calculatePostFix(String postFixExpress) {
         Stack<String> numbers = new Stack<>();

@@ -36,11 +36,15 @@ public class OperatorUtilTest {
 
     @Test
     public void testIsHighPriority() {
-        assertTrue(operatorUtil.isHighPriority("*", "+"));
-        assertTrue(operatorUtil.isHighPriority("*", "-"));
-        assertTrue(operatorUtil.isHighPriority("/", "+"));
-        assertTrue(operatorUtil.isHighPriority("/", "-"));
-        assertFalse(operatorUtil.isHighPriority("+", "-"));
-        assertFalse(operatorUtil.isHighPriority("*", "/"));
+        assertTrue(operatorUtil.isHighOrEqualPriority("*", "+"));
+        assertTrue(operatorUtil.isHighOrEqualPriority("*", "-"));
+        assertTrue(operatorUtil.isHighOrEqualPriority("/", "+"));
+        assertTrue(operatorUtil.isHighOrEqualPriority("/", "-"));
+        assertTrue(operatorUtil.isHighOrEqualPriority("+", "-"));
+        assertTrue(operatorUtil.isHighOrEqualPriority("*", "/"));
+        assertFalse(operatorUtil.isHighOrEqualPriority("+", "*"));
+        assertFalse(operatorUtil.isHighOrEqualPriority("-", "*"));
+        assertFalse(operatorUtil.isHighOrEqualPriority("+", "/"));
+        assertFalse(operatorUtil.isHighOrEqualPriority("-", "/"));
     }
 }

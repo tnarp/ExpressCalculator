@@ -32,10 +32,10 @@ public class OperatorUtil {
         return str.equals(LEFT_PARENTHESIS);
     }
 
-    public boolean isHighPriority(String operator1, String operator2) {
+    public boolean isHighOrEqualPriority(String operator1, String operator2) {
         if (isParenthesis(operator1) || isParenthesis(operator2)) {
             return false;
         }
-        return allOperatorPriority.get(operator1) > allOperatorPriority.get(operator2);
+        return allOperatorPriority.get(operator1) >= allOperatorPriority.get(operator2);
     }
 }
